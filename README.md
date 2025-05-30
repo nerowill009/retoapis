@@ -21,7 +21,7 @@ Reto de automatizacion de apis usando **Karate DSL**. Apuntando a la API de Usua
 git clone https://github.com/nerowill009/retoapis.git
 ``bash
 
-ESTRUCTURA DEL PROYECTO
+## ESTRUCTURA DEL PROYECTO
 
 retoapis/
 ├── src/
@@ -36,7 +36,7 @@ retoapis/
 │           └── karateRunner.java           # Clase para ejecutar las pruebas
 
 
-✅ Validaciones de las Pruebas
+## ✅ Validaciones de las Pruebas
 Cada prueba automatizada verifica que:
 
 Las respuestas tengan el formato correcto (JSON).
@@ -45,7 +45,7 @@ El código de estado HTTP sea el esperado.
 
 Los datos retornados contengan los valores correctos.
 
-🧪 Ejecución de las Pruebas
+## 🧪 Ejecución de las Pruebas
 
 Karate.run("classpath:REST"): Ejecuta todos los archivos .feature dentro de la carpeta REST.
 
