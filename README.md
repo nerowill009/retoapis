@@ -1,46 +1,53 @@
-Reto de Automatización QA - BackEnd
-Este proyecto tiene como objetivo automatizar las pruebas de una API de usuarios utilizando Karate DSL. A continuación se detallan los pasos para la configuración del proyecto, estructura, y cómo se han implementado las pruebas para cada uno de los endpoints de la API. Las pruebas serán realizadas para la API de Usuarios de ServeRest (https://serverest.dev/)
+# Automatización QA - BackEnd con Karate DSL
 
-Requisitos
-Java 8 o superior.
-Karate DSL: Se utilizará Karate para la automatización de las pruebas.
-Maven para la gestión de dependencias.
-API de usuarios disponible para pruebas.
-Instalación
+Reto de automatizacion de apis usando **Karate DSL**. Apuntando a la API de Usuarios de [ServeRest](https://serverest.dev/).
 
-Clonar el repositorio
-Primero, clonar el repositorio en tu máquina local:
+---
 
+## 🧰 Requisitos
+
+- Java 8 o superior
+- Maven
+- Karate DSL
+- Conexión a la API de usuarios de ServeRest
+
+---
+
+## 🚀 Instalación
+
+### 1. Clonar el repositorio
+
+``bash
 git clone https://github.com/nerowill009/retoapis.git
+``bash
+
+ESTRUCTURA DEL PROYECTO
+
+retoapis/
+├── src/
+│   └── test/
+│       └── java/
+│           └── REST/
+│               ├── user-delete.feature     # Prueba para eliminar un usuario
+│               ├── user-get.feature        # Prueba para listar todos los usuarios
+│               ├── user-getID.feature      # Prueba para buscar un usuario por ID
+│               ├── user-post.feature       # Prueba para registrar un nuevo usuario
+│               └── user-put.feature        # Prueba para actualizar los datos de un usuario
+│           └── karateRunner.java           # Clase para ejecutar las pruebas
 
 
-Estructura del Proyecto
-La estructura del proyecto es la siguiente:
-
-src/main/test/java/REST/: Carpeta donde se encuentran los archivos de características (.feature).
-
-user-delete.feature: Prueba para eliminar un usuario.
-user-get.feature: Prueba para listar todos los usuarios.
-user-getID.feature: Prueba para buscar un usuario por ID.
-user-post.feature: Prueba para registrar un nuevo usuario.
-user-put.feature: Prueba para actualizar los datos de un usuario.
-Validaciones
-Cada prueba valida que:
+✅ Validaciones de las Pruebas
+Cada prueba automatizada verifica que:
 
 Las respuestas tengan el formato correcto (JSON).
+
 El código de estado HTTP sea el esperado.
-Los valores en la respuesta sean los correctos.
-Ejecución de las Pruebas
-El proyecto está configurado para ejecutar las pruebas utilizando un runner en Java. La clase karateRunner.java contiene el siguiente código para ejecutar las pruebas:
 
-import com.intuit.karate.junit5.Karate;
+Los datos retornados contengan los valores correctos.
 
-public class karateRunner {
+🧪 Ejecución de las Pruebas
 
-    @Karate.Test
-    Karate testSample() {
-        return Karate.run("classpath:REST");
-    }
-}
-Explicación:
-Karate.run("classpath:REST"): Aquí se especifica la ruta del archivo .feature o de la carpeta que contiene las pruebas de Karate. Por ejemplo, si deseas ejecutar el archivo user-get.feature en específico, la ruta sería "classpath:REST/user-get.feature".
+Karate.run("classpath:REST"): Ejecuta todos los archivos .feature dentro de la carpeta REST.
+
+Para ejecutar un archivo en específico, por ejemplo user-get.feature, cambia la línea por:
+return Karate.run("classpath:REST/user-get.feature");
